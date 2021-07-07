@@ -2,6 +2,7 @@
 
 # Create an .env from AppCenter Environment variables for use with react-native-config
 echo AS-test-root-pre-build
+echo ${AS_TEST}
 
 ENV_WHITELIST=${ENV_WHITELIST:-"USER[-|_]DEFINED_.*"}
 printf "Creating an .env file with the following whitelist:\n"
