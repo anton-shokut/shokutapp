@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 # Create an .env from AppCenter Environment variables for use with react-native-config
-# echo AS-test
-# printf "Creating an .env file with the following whitelist:\n"
-# printf "%s\n" $ENV_WHITELIST
+echo AS-test-root-pre-build
 
-# set | egrep -e $ENV_WHITELIST > .env
+ENV_WHITELIST=${ENV_WHITELIST:-".*"}
+printf "Creating an .env file with the following whitelist:\n"
+printf "%s\n" $ENV_WHITELIST
 
-# printf "\n.env created with contents:\n\n"
+set | egrep -e $ENV_WHITELIST > .env
 
-# cat .env
+printf "\n.env created with contents:\n\n"
+
+cat .env
